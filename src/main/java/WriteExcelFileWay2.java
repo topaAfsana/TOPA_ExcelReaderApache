@@ -10,10 +10,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class WriteExcelFileWay2 {
+
+    //METHOD CALL
     public static void main(String[] args) {
         WriteExcelFileWay2.writeCellValue2();
     }
 
+
+    //METHOD DEFINITION
     static FileOutputStream fos;
     static XSSFWorkbook workbook;
 

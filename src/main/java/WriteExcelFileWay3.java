@@ -7,10 +7,12 @@ import java.io.*;
 
 public class WriteExcelFileWay3 {
 
+    //METHOD CALL
     public static void main(String[] args) {
         WriteExcelFileWay3.writeCellValue3();
     }
 
+    //METHOD DEFINITION
     static FileInputStream fis;
     static XSSFWorkbook workbook;
 
@@ -35,7 +37,7 @@ public class WriteExcelFileWay3 {
         //6.CREATE CELL
         XSSFCell cell=row.createCell(0);
         //7.SET VALUE TO THE CELL
-        cell.setCellValue("TOPA");
+        cell.setCellValue("TOMA");
         System.out.println(cell.getStringCellValue());
 
     }

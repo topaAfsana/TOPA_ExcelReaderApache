@@ -10,12 +10,19 @@ import java.io.IOException;
 import java.util.Iterator;
 
 public class ReadExcelFileWay1 {
+
+//METHOD CALL
 public static void main(String[] args){
     ReadExcelFileWay1.readCellValue1();
 }
+
+
+//METHOD DEFINITION
+
     static FileInputStream fis;
     static XSSFWorkbook wb;
     public static void readCellValue1(){
+//WORKS(EXCEPT NUM VALUE) AND WILL FOLLOW THIS ONE
 //WAY1:ITERATE THE ROWS AND CELL TO RUN TEST ON MULTIPLE SET OF DATA
 
 
@@ -49,7 +56,7 @@ public static void main(String[] args){
                 // IN EACH CELL ITERATION GET STRING CELL VALUE
                 System.out.println(cell.getStringCellValue());
                 // IN EACH CELL ITERATION GET NUMERIC CELL VALUE
-                System.out.println(cell.getNumericCellValue());
+//                System.out.println(cell.getNumericCellValue());
             }
         }
         }

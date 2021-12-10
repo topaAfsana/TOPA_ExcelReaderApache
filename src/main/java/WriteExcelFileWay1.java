@@ -12,14 +12,19 @@ import java.util.Set;
 import java.util.TreeMap;
 
 public class WriteExcelFileWay1 {
+
+    //METHOD CALL
     public static void main(String[] args) {
         WriteExcelFileWay1.writeCellValue1();
     }
 
+
+    //METHOD DEFINITION
     static FileOutputStream fos;
     static XSSFWorkbook workbook;
 
     public static void writeCellValue1() {
+        //WORKS AND WILL FOLLOW THIS ONE
         //WAY1:CREATING DATA STRUCTURE AND ITERATE OVER THE DATA AND CREATING ROW AND CELL AND
         // CREATING NON-EXISTING FILE AND WRITE IN IT
 

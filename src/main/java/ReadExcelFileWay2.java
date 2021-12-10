@@ -9,13 +9,16 @@ import java.io.IOException;
 
 public class ReadExcelFileWay2 {
 
+    //METHOD CALL
     public static void main(String[] args){
         ReadExcelFileWay2 .readCellValue2("excelFilePath","yourSheetName",2,0);
+        //Parameters are just reference that could be parameterized
     }
 
+
+    //METHOD DEFINITION
     static FileInputStream fis;
     static XSSFWorkbook wb;
-
     public static void readCellValue2(String filePath,String sheetnmae,int rowNum,int cellNum){
 //WAY2:GET THE SPECIFIC ROWS AND CELL TO RUN TEST ON SINGLE SET OF DATA
 
