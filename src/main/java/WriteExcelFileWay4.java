@@ -7,15 +7,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeMap;
+import java.util.*;
 
-public class WriteExcelFileWay1 {
+public class WriteExcelFileWay4 {
 
     //METHOD CALL
     public static void main(String[] args) {
-        WriteExcelFileWay1.writeCellValue1();
+        WriteExcelFileWay4.writeCellValue4();
     }
 
 
@@ -23,7 +21,7 @@ public class WriteExcelFileWay1 {
     static FileOutputStream fos;
     static XSSFWorkbook workbook;
 
-    public static void writeCellValue1() {
+    public static void writeCellValue4() {
         //WORKS AND WILL FOLLOW THIS ONE
         //WAY1:CREATING DATA STRUCTURE AND ITERATE OVER THE DATA AND CREATING ROW AND CELL AND
         // CREATING NON-EXISTING FILE AND WRITE IN IT
@@ -38,12 +36,15 @@ public class WriteExcelFileWay1 {
 
         //A)STEPS FOR WHAT DATA TO ADD
         //3.CREATE SHEET DATA STRUCTURE USING MAP OF KEY AS STRING AND VALUE AS OBJECT ARRAY OF TREEMAP->1 TO MANY DATA STRUCTURE
-        Map<String,Object[]> data=new TreeMap<String,Object[]>();
+//        List<Object> columns= new ArrayList<Object>();
+        Map<String, List<Object>> data= new TreeMap<String, List<Object>>();
 
         //4.CREATE DATA TO THAT TREE MAP(FIRST INPUT(KEY) REFER ROW NUMBER,SECOND INPUT(VALUE) IS A LIST OBJECT REPRESENTS COLUMN/CELL OF EACH ROW )
-        data.put("1",new Object[]{"ID","NAME","PRICE"});
-        data.put("2",new Object[]{"1","APPLE","2.30"});
-        data.put("3",new Object[]{"2","ORANGE","4.00"});
+
+
+        data.put("1", Arrays.asList("ID", "NAME", "PRICE"));
+        data.put("2",Arrays.asList("1","APPLE","2.30"));
+        data.put("3",Arrays.asList("2","ORANGE","4.00"));
 
 
         //4.CREATE CELL USING THE SECOND INPUT DATA'S THROUGH ITERATION OF KEY-SET/KEYS OF THE MAP
@@ -56,13 +57,13 @@ public class WriteExcelFileWay1 {
         int rowNum=0;
         for(String key:keySet){
         //5.CREATE ROWS> CREATE APACHE ROW OBJECT TO STORE THE KEY AS ROWS IN THE DEFINED SHEET IN EACH ITERATION STARTING FROM 0
-            Row row=sheet.createRow(rowNum++);//CREATES ROW AS MANY TIME ITERATION RUN AS ON MAP KEY ROWS
+            Row row=sheet.createRow(rowNum++);
 
-
-        //ON SAME ITERATION OF ROW CORRESPONDING KEY VALUE CELL ARE CREATED.EXAMPLE ROW ITERATION 1,CELL ITERATION 1
         //6.CREATE CELL> ONCE EACH ROW CREATED ON SAME ITERATION ADD ALL THE LIST OF DATAS(TREE-MAP VALUE) CORRESPONDING TO EACH KEY/ROW WILL BE ADDED AS CELL
-        // TO ITERATE OVER THE LIST OF DATA OF OBJECT[] WE CREATE ANOTHER OBJECT STORAGE TO STORE DATA RETRIEVED FROM EACH KEY/ROW
-            Object[] cellArray=data.get(key);
+        // TO ITERATE OVER THE LIST OF DATA OF OBJECT[] WE CREATE/STORE IN ANOTHER LIST OBJECT STORAGE RETRIEVED FROM EACH KEY/ROW VALUE
+        // GET CURRENT MAP KEY VALUE ARE STORED AS LIST OBJECT IN THE ITERATION
+            List<Object> cellArray=data.get(key);
+
 
         //ITERATE CELLS HERE START FROM 0
             int cellNum=0;
@@ -74,7 +75,7 @@ public class WriteExcelFileWay1 {
 
         // 7.AFTER INSERTING DATA IN THE APACHE SHEET OBJECT WE NEED DEFINE FILE AND PATH TO WRITE THE OBJECT TO A XLS EXCEL FILE USING FILE CLASS
         // File xlsDest= new File("/Users/abraartishan/Desktop/writeTest.xlsx");
-        File xlsDest= new File("src/main/resources/writeTest.xlsx");
+        File xlsDest= new File("src/main/resources/writeTest4.xlsx");
 
         //8.PROCESS WRITING THAT FILE(INCLUDED THE ROWS AND CELLS OF SHEET) USING FILE-OUTPUT-STREAM
         try {fos=new FileOutputStream(xlsDest);} catch (FileNotFoundException e) {e.printStackTrace();}
