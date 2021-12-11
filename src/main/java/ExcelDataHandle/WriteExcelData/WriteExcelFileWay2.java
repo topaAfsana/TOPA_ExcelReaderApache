@@ -1,6 +1,7 @@
+package ExcelDataHandle.WriteExcelData;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
@@ -37,7 +38,7 @@ public class WriteExcelFileWay2 {
         cell.setCellValue("NAME");
 
         //6.CREATE FILE DESTINATION PATH
-        File xlsDest= new File("src/main/resources/writeTest2.xlsx");
+        File xlsDest= new File("src/main/resources/ExcelDataFiles/writeTest2.xlsx");
         //7.WRITE STREAM PROCESS USING FILE OUTPUT STREAM CLASS
         try {fos=new FileOutputStream(xlsDest);} catch (FileNotFoundException e) {e.printStackTrace();}
 

@@ -1,3 +1,5 @@
+package ExcelDataHandle.WriteExcelData;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -75,7 +77,7 @@ public class WriteExcelFileWay4 {
 
         // 7.AFTER INSERTING DATA IN THE APACHE SHEET OBJECT WE NEED DEFINE FILE AND PATH TO WRITE THE OBJECT TO A XLS EXCEL FILE USING FILE CLASS
         // File xlsDest= new File("/Users/abraartishan/Desktop/writeTest.xlsx");
-        File xlsDest= new File("src/main/resources/writeTest4.xlsx");
+        File xlsDest= new File("src/main/resources/ExcelDataFiles/writeTest4.xlsx");
 
         //8.PROCESS WRITING THAT FILE(INCLUDED THE ROWS AND CELLS OF SHEET) USING FILE-OUTPUT-STREAM
         try {fos=new FileOutputStream(xlsDest);} catch (FileNotFoundException e) {e.printStackTrace();}

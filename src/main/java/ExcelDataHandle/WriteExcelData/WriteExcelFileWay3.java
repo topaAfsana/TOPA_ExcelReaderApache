@@ -1,3 +1,5 @@
+package ExcelDataHandle.WriteExcelData;
+
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -20,7 +22,7 @@ public class WriteExcelFileWay3 {
         //WAY3:ADDING DATA USING SPECIFIC ROW AND COLUMN,ACCESSING EXISTING FILE AND WRITE IN IT\
 
         //1.DEFINE EXISTING EXCEL FILE PATH USING FILE CLASS
-        File xlsSrc= new File("src/main/resources/writeTest2.xlsx");
+        File xlsSrc= new File("src/main/resources/ExcelDataFiles/writeTest2.xlsx");
         //2.ACCESS THE FILE USING FILE INPUT STREAM
         try {fis=new FileInputStream(xlsSrc);} catch (FileNotFoundException e) {e.printStackTrace();}
 

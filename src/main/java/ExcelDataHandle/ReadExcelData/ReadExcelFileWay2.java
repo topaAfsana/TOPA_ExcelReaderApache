@@ -1,3 +1,5 @@
+package ExcelDataHandle.ReadExcelData;
+
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -25,7 +27,7 @@ public class ReadExcelFileWay2 {
 //    1.DEFINE THE FILE PATH using JAVA File class
 
 //      File XlsSrc= new File("/Users/abraartishan/Desktop/readTest.xlsx");
-        File XlsSrc= new File("src/main/resources/readTest.xlsx");
+        File XlsSrc= new File("src/main/resources/ExcelDataFiles/readTest.xlsx");
 
 //    2.ACCESS FILE BYTES USING JAVA FILE INPUT STREAM CLASS SPECIFYING THE FILE OBJECT
         {try {fis = new FileInputStream(XlsSrc);} catch (FileNotFoundException e) {e.printStackTrace();}}

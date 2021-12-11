@@ -1,3 +1,5 @@
+package ExcelDataHandle.ReadExcelData;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -28,7 +30,7 @@ public static void main(String[] args){
 
 //    1.DEFINE THE FILE PATH using JAVA File class
 //      File XlsSrc= new File("/Users/abraartishan/Desktop/readTest.xlsx");
-        File XlsSrc= new File("src/main/resources/readTest.xlsx");
+        File XlsSrc= new File("src/main/resources/ExcelDataFiles/readTest.xlsx");
 
 
 
